@@ -13,10 +13,6 @@ class ArticleListFilter(admin.SimpleListFilter):
     title = _("作者")
     parameter_name = 'author'
 
-    def lookups(self, request, model_admin):
-        authors = list(set(map(lambda x: x.author, Article.objects.all())))
-        for author in authors:
-            yield (author.id, _(author.username))
 
     def queryset(self, request, queryset):
         id = self.value()
