@@ -12,9 +12,7 @@ class commands(models.Model):
     def __str__(self):
         return self.title
 
-    class Meta:
-        verbose_name = '命令'
-        verbose_name_plural = verbose_name
+
 
 
 class EmailSendLog(models.Model):
