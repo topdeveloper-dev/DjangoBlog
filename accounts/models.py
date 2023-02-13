@@ -28,4 +28,8 @@ class BlogUser(AbstractUser):
                                             path=self.get_absolute_url())
         return url
 
-
+    class Meta:
+        ordering = ['-id']
+        verbose_name = "用户"
+        verbose_name_plural = verbose_name
+        get_latest_by = 'id'
